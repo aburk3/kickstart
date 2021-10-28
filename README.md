@@ -6,3 +6,8 @@
 # Run tests
 
 - Run `npm run test`
+
+# Run deployment script
+
+1. Navigate inside the `ethereum` directory
+2. Run `node deploy.js`
