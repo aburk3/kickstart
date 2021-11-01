@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, Input } from "semantic-ui-react";
+import { Form, Button, Input, Message } from "semantic-ui-react";
 import Layout from "../../components/Layout";
 import factory from "../../ethereum/factory";
 import web3 from "../../ethereum/web3";
@@ -29,7 +29,7 @@ class CampaignNew extends Component {
     return (
       <Layout>
         <h3>Create Campaign</h3>
-        <Form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
             <label>Minimum Contribution</label>
             <Input
@@ -41,6 +41,7 @@ class CampaignNew extends Component {
               }
             />
           </Form.Field>
+          <Message error header="Oops!" content={this.state.errorMessage} />
           <Button primary>Create!</Button>
         </Form>
       </Layout>
